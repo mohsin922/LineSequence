@@ -33,10 +33,15 @@ namespace Line_Sequence
             {
                 Console.WriteLine("Lines are equal");
             }
-            else
+            else if(result > result1)
             {
-                Console.WriteLine("Lines are not equal");
+                Console.WriteLine("Line 1 is greater than Line 2");
             }
+            else  
+            {
+                Console.WriteLine("Line 1 is Lesser than Line 2");
+            }
+           
         }
     }
 
