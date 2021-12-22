@@ -2,49 +2,52 @@
 
 namespace Line_Sequence
 {
-    class program
+    class Program
     {
-        public static double Length(double x1, double x2, double y1, double y2)
+        public double Linelength(double x1, double x2, double y1, double y2)
         {
-            return Math.Sqrt(Math.Pow((x2 - x1), 2) + Math.Pow((y2 - y1), 2));
+            double sqrt = Math.Sqrt(Math.Pow((x2 - x1), 2) + Math.Pow((y2 - y1), 2));
+            Console.WriteLine(Math.Round(sqrt, 2));
+            return Math.Round(sqrt, 2);
         }
-
-        static void Main(String[] args)
+        static void Main(string[] args)
         {
-            Console.WriteLine("Please Enter X1 and Y1 Co-Ordinates:");
-            var x1 = Convert.ToDouble(Console.ReadLine());
-            var y1 = Convert.ToDouble(Console.ReadLine());
-            Console.WriteLine("Please Enter X2 and Y2 Co-Ordinates:");
-            var x2 = Convert.ToDouble(Console.ReadLine());
-            var y2 = Convert.ToDouble(Console.ReadLine());
-            var result = Length(x1, x2, y1, y2);
-            Console.WriteLine("Length of line between cordinates {0},{1} and {2},{3} is {4}", x1, y1, x2, y2, result);
+            int i;
+            double x1, x2, y1, y2;
+            double[] array = new double[2];
+            for (i = 0; i < 2; i++)
+            {
 
 
-            Console.WriteLine("Please Enter X3 and Y3 Co-Ordinates:");
-            var x3 = Convert.ToDouble(Console.ReadLine());
-            var y3 = Convert.ToDouble(Console.ReadLine());
-            Console.WriteLine("Please Enter X4 and Y4 Co-Ordinates:");
-            var x4 = Convert.ToDouble(Console.ReadLine());
-            var y4 = Convert.ToDouble(Console.ReadLine());
-            var result1 = Length(x3, x4, y3, y4);
-            Console.WriteLine("Length of line between cordinates {0},{1} and {2},{3} is {4}", x3, y3, x4, y4, result1);
-            if( result == result1)
-            {
-                Console.WriteLine("Lines are equal");
+                Console.WriteLine("the value of x1 Co-Ordinate is : ");
+                x1 = Convert.ToDouble(Console.ReadLine());
+
+                Console.WriteLine("the value of x2 Co-Ordinate is : ");
+                x2 = Convert.ToDouble(Console.ReadLine());
+
+                Console.WriteLine("the value of y1 Co-Ordinate is : ");
+                y1 = Convert.ToDouble(Console.ReadLine());
+
+                Console.WriteLine("the value of y2 Co-Ordinate is : ");
+                y2 = Convert.ToDouble(Console.ReadLine());
+
+                Program p = new Program();
+                Console.WriteLine("the length of the line " + i + "is : ");
+
+                array[i] = p.Linelength(x1, x2, y1, y2);
             }
-            else if(result > result1)
+            if (array[0] == array[1])
             {
-                Console.WriteLine("Line 1 is greater than Line 2");
+                Console.WriteLine("Both lines are equal");
             }
-            else  
+            else
             {
-                Console.WriteLine("Line 1 is Lesser than Line 2");
+                Console.WriteLine("Both lines are  not equal");
+
             }
-           
         }
     }
-
-
-
 }
+
+
+
